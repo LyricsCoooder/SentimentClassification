@@ -6,9 +6,6 @@ with open('../data/simplifyweibo_4_moods.csv', 'r', encoding="utf-8") as infile:
     reader = csv.reader(infile)
     data = list(reader)
 
-
-
-
 row = data[0:]
 random.shuffle(row)
 
