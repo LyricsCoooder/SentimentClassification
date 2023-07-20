@@ -1,2 +1,5 @@
 /zip/
 /build/
+/__pycache__/
+/DataPreprocess/__pycache__/
+/reconstitution/__pycache__/
