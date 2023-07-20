@@ -2,8 +2,6 @@
 
 基于PyTorch的情感分类工具，通过Bert构建词向量，Bi-LSTM，Attention构建主要神经网络实现情感分类
 
-- 不包含build文件夹，需要去创建词向量.npy文件
-  - 新建build文件夹，并运行 DataPreprocess\GetBertWordEmbeddings.py
 
 
 
