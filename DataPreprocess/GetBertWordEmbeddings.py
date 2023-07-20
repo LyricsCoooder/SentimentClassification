@@ -59,12 +59,12 @@ def SaveEmbeddingsAndLabels(EmbeddingsPath, EmbeddingsList, LabelsPath, LabelsLi
     numpy.save(EmbeddingsPath, EmbeddingsList)
     numpy.save(LabelsPath, LabelsList)
 
-trainEmbeddingsList, trainLabelsList = GetBertWordEmbeddings(".\\data\\TrainData.csv", batchSize = 64, model = "bert-base-chinese")
-SaveEmbeddingsAndLabels(".\\build\\TrainEmbeddingsList.npy", trainEmbeddingsList, 
-                        ".\\build\\TrainLabelsList.npy", trainLabelsList)
+# trainEmbeddingsList, trainLabelsList = GetBertWordEmbeddings(".\\data\\TrainData.csv", batchSize = 64, model = "bert-base-chinese")
+# SaveEmbeddingsAndLabels(".\\build\\TrainEmbeddingsList.npy", trainEmbeddingsList, 
+#                         ".\\build\\TrainLabelsList.npy", trainLabelsList)
 
-testEmbeddingsList, testLabelsList = GetBertWordEmbeddings(".\\data\\TestData.csv",batchSize = 64, model = "bert-base-chinese")
-SaveEmbeddingsAndLabels(".\\build\\TestEmbeddingsList.npy", testEmbeddingsList, 
-                        ".\\build\\TestLabelsList.npy", testLabelsList)
+# testEmbeddingsList, testLabelsList = GetBertWordEmbeddings(".\\data\\TestData.csv",batchSize = 64, model = "bert-base-chinese")
+# SaveEmbeddingsAndLabels(".\\build\\TestEmbeddingsList.npy", testEmbeddingsList, 
+#                         ".\\build\\TestLabelsList.npy", testLabelsList)
 
-print("GetBertWordEmbeddings is ok!")
+# print("GetBertWordEmbeddings is ok!")
