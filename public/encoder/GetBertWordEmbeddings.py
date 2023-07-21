@@ -25,7 +25,7 @@ def GetBertWordEmbeddings(path, batchSize, model="bert-base-chinese"):
     dataLoader = DataLoader(textDataset, batch_size=batchSize)
     berTokenizer = BertTokenizerFast.from_pretrained(model,
                                                      add_special_tokens=False,
-                                                     do_lower_case=True)
+                                                     do_lower_case=True,)
 
     bertModel = BertModel.from_pretrained(model).to(device)
 
@@ -33,6 +33,9 @@ def GetBertWordEmbeddings(path, batchSize, model="bert-base-chinese"):
     labelsList = []
 
     for contents, labels in dataLoader:
+
+        contents = list(contents)
+        print(type(contents),len(contents), contents)
         features = berTokenizer.batch_encode_plus(contents,
                                                   add_special_tokens=False,
                                                   padding="max_length",
