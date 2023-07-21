@@ -1,5 +1,3 @@
-import sys
-sys.path.append('../../')
 from public.encoder.GetBertWordEmbeddings import *
 
 trainEmbeddingsList, trainLabelsList = GetBertWordEmbeddings("../data/PreData/TrainData.csv",

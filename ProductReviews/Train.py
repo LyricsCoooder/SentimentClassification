@@ -1,6 +1,3 @@
-import sys
-sys.path.append('../')
-
 from public.decoder.decode import *
 
 decode = Decode(num_classes = 2)
