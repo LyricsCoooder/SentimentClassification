@@ -1,4 +1,3 @@
-import pandas as pd
 import csv
 
 contents = []
@@ -14,7 +13,7 @@ for line in csv_reader:
 
 data = list(zip(labels, contents))
 
-with open('../data/PreData/testData.csv', 'w', newline='', encoding="utf-8") as csvfile:
+with open('../data/PreData/TestData.csv', 'w', newline='', encoding="utf-8") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['标签', '内容'])
     writer.writerows(data)
