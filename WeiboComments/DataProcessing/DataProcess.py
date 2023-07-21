@@ -10,8 +10,8 @@ df['review'] = df['review'].apply(lambda x: re.sub(r'[^\w\s]', '', x))
 df['label'] = df['label'].map({0: 1, 1: 0})
 # 打乱顺序
 df = df.sample(frac=1).reset_index(drop=True)
-# 计算切分的索引   7 比 3
-split_index = int(len(df) * 0.7)
+# 计算切分的索引   9 比 1
+split_index = int(len(df) * 0.9)
 # 分割数据
 train_data = df[:split_index]
 test_data = df[split_index:]
@@ -25,14 +25,30 @@ df['review'] = df['review'].apply(lambda x: re.sub(r'[^\w\s]', '', x))
 df.loc[df['label'].isin([2, 3]), 'label'] = 1
 # 打乱顺序
 df = df.sample(frac=1).reset_index(drop=True)
-# 计算切分的索引   7 比 3
-split_index = int(len(df) * 0.7)
+# 计算切分的索引   9 比 1
+split_index = int(len(df) * 0.9)
 # 分割数据
 train_data2 = df[:split_index]
 test_data2 = df[split_index:]
 
 data = test_data._append(test_data2, ignore_index=True)
-data.to_csv('../data/PreData/TestData.csv', index=False, columns=["label", "review"])
+maxLen = 64 * 128
+dataSum = int(len(data) / maxLen)
+for i in range(dataSum):
+    data[i * maxLen:(i + 1) * maxLen].to_csv('../data/PreData/TestData/TestData' + str(i) + '.csv',
+                                             index=False,
+                                             columns=["label", "review"])
+data[dataSum * maxLen:].to_csv('../data/PreData/TestData/TestData' + str(dataSum) + '.csv',
+                               index=False,
+                               columns=["label", "review"])
 
 data = train_data._append(train_data2, ignore_index=True)
-data.to_csv('../data/PreData/TrainData.csv', index=False, columns=["label", "review"])
+maxLen = 64 * 128
+dataSum = int(len(data) / maxLen)
+for i in range(dataSum):
+    data[i * maxLen:(i + 1) * maxLen].to_csv('../data/PreData/TrainData/TrainData' + str(i) + '.csv',
+                                             index=False,
+                                             columns=["label", "review"])
+data[dataSum * maxLen:].to_csv('../data/PreData/TrainData/TrainData' + str(dataSum) + '.csv',
+                               index=False,
+                               columns=["label", "review"])
