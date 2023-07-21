@@ -34,7 +34,7 @@ def GetBertWordEmbeddings(path, batchSize, model = "bert-base-chinese"):
     for contents, labels in dataLoader:
         features = berTokenizer.batch_encode_plus(contents,
                                             add_special_tokens=False,
-                                            padding=True,
+                                            padding="max_length",
                                             truncation=True,
                                             max_length=128,
                                             return_tensors = 'pt').to(device)
