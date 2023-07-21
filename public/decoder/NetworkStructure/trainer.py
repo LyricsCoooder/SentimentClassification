@@ -23,6 +23,6 @@ class Trainer:
 
             print('Epoch:', '%04d' % (epoch + 1), 'loss =', '{:.6f}'.format(loss))
 
-    def save(self):
-        torch.save(self.model, "model.pth")
+    def save(self, path):
+        torch.save(self.model, path)
         print("模型保存完成")

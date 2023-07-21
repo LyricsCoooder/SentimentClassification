@@ -28,13 +28,11 @@ while(True):
     embeddings = outputs.last_hidden_state
     embeddings = embeddings.to(device)
 
-    model = torch.load("model.pth")
+    model = torch.load("../ProductReviews/models/model.pth")
     out = model(embeddings)
 
     maxIdex = torch.argmax(out,dim = 1)
-    if(maxIdex == 0):
+    if(maxIdex == 1):
         print("负面评论")
-    elif(maxIdex == 1):
-        print("中性评论")
-    elif(maxIdex == 2):
+    elif(maxIdex == 0):
         print("正面评论")

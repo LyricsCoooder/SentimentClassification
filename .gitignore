@@ -1,3 +1,5 @@
 /ProductReviews/data/PreData/
 /WeiboComments/data/PreData/
 /public/encoder/__pycache__/
+/public/decoder/__pycache__/
+/public/decoder/NetworkStructure/__pycache__/
