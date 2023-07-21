@@ -10,8 +10,8 @@ class MyDataset(Dataset):
     def __init__(self, data_dir):
         df = pd.read_csv(data_dir)
         self.n_samples = df.shape[0]
-        self.contents = df.values[:, 0]
-        self.labels = df.values[:, 1]
+        self.contents = df.values[:, 1]
+        self.labels = df.values[:, 0]
 
     def __getitem__(self, index):
         return self.contents[index], self.labels[index]
