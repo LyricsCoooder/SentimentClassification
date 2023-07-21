@@ -12,10 +12,10 @@ for dataLine in dataLines:
     content = str(dataLine[:-1])
     content = content.replace('\t','')
     
-    if(label != 1):
-        if(label == 0):
+    if label != 1:
+        if label == 0:
             label = 1
-        if(label == 2):
+        if label == 2:
             label = 0
         
         contents.append(content)
