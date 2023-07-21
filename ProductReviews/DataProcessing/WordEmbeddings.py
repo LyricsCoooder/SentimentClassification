@@ -2,11 +2,11 @@ import sys
 sys.path.append('../../')
 from public.encoder.GetBertWordEmbeddings import *
 
-# trainEmbeddingsList, trainLabelsList = GetBertWordEmbeddings("../data/PreData/TrainData.csv",
-#                                                                    batchSize = 64, 
-#                                                                    model = "bert-base-chinese")
-# SaveEmbeddingsAndLabels("../data/PreData/TrainEmbeddingsList.npy", trainEmbeddingsList, 
-#                         "../data/PreData/TrainLabelsList.npy", trainLabelsList)
+trainEmbeddingsList, trainLabelsList = GetBertWordEmbeddings("../data/PreData/TrainData.csv",
+                                                                   batchSize = 64, 
+                                                                   model = "bert-base-chinese")
+SaveEmbeddingsAndLabels("../data/PreData/TrainEmbeddingsList.npy", trainEmbeddingsList, 
+                        "../data/PreData/TrainLabelsList.npy", trainLabelsList)
 
 TestEmbeddingsList, TestLabelsList = GetBertWordEmbeddings("../data/PreData/TestData.csv",
                                                                    batchSize = 64, 
