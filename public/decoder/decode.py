@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import numpy as np
-from reconstitution.LSTM import LSTM
-from reconstitution.trainer import Trainer
+from SentimentClassification.public.decoder.NetworkStructure.LSTM import LSTM
+from SentimentClassification.public.decoder.NetworkStructure.trainer import Trainer
 
 # 超参数初始化
 input_size = 768
