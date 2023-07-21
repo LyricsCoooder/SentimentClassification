@@ -29,4 +29,3 @@ print(len(test_data))
 
 train_data.to_csv('../data/PreData/train_data_36.csv', index=False, columns=["review", "label"])
 test_data.to_csv('../data/PreData/test_data_36.csv', index=False, columns=["review", "label"])
-
