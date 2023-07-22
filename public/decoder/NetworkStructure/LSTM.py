@@ -19,7 +19,6 @@ class LSTM(nn.Module):
         self.fc = nn.Linear(hidden_size * 2, self.num_classes)
 
     def attention_net(self, lstm_output, final_state):
-        
         hidden = torch.cat((final_state[0], final_state[1]), dim=1).unsqueeze(2)
 
         attn_weights = torch.bmm(lstm_output, hidden).squeeze(2)

@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import numpy as np
-import sys
 from public.decoder.NetworkStructure.LSTM import LSTM
 from public.decoder.NetworkStructure.trainer import Trainer
 

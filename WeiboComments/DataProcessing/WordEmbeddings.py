@@ -19,8 +19,8 @@ for i in range(testDatafilesNum):
 for i in range(trainDatafilesNum):
     infileName = "TrainData" + str(i) + ".csv"
     trainEmbeddingsList, trainLabelsList = GetBertWordEmbeddings("../data/PreData/TrainData/" + infileName,
-                                                               batchSize=64,
-                                                               model="bert-base-chinese")
+                                                                 batchSize=64,
+                                                                 model="bert-base-chinese")
 
     outfileName = "TrainDataEmbeddings" + str(i) + ".npy"
     SaveEmbeddingsAndLabels("../data/PreData/TrainEmbeddings/" + outfileName, trainEmbeddingsList,

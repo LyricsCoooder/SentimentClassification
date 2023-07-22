@@ -1,6 +1,5 @@
 import torch
 
-
 class Trainer:
     def __init__(self, num_epochs, model, criterion, optimizer):
         self.num_epochs = num_epochs
@@ -9,6 +8,7 @@ class Trainer:
         self.optimizer = optimizer
 
     def train(self, data_train, labels_train):
+        global loss
         print("开始训练")
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         for epoch in range(self.num_epochs):
