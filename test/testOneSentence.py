@@ -28,7 +28,7 @@ while (True):
     embeddings = outputs.last_hidden_state
     embeddings = embeddings.to(device)
 
-    model = torch.load("../ProductReviews/models/model.pth")
+    model = torch.load("../WeiboComments/models/model.pth")
     out = model(embeddings)
 
     maxIdex = torch.argmax(out, dim=1)

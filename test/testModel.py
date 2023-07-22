@@ -2,7 +2,7 @@ import torch
 import numpy as np
 import torch.nn as nn
 
-model = torch.load("../ProductReviews/models/model.pth")
+model = torch.load("../WeiboComments/models/model.pth")
 model.eval()
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 

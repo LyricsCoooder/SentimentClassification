@@ -8,8 +8,8 @@ input_size = 768
 hidden_size = 128
 num_layers = 2
 num_epochs = 100
-learning_rate = 0.01
-DropOut = 0.5
+learning_rate = 0.1
+DropOut = 0.1
 num_classes = 2
 
 model = LSTM(input_size,
