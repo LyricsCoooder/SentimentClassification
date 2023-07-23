@@ -7,8 +7,8 @@ model.eval()
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # 测试集
-data_test = np.load("../ProductReviews/data/PreData/TestEmbeddingsList.npy")
-labels_test = np.load("../ProductReviews/data/PreData/TestLabelsList.npy")
+data_test = np.load("../WeiboComments/data/PreData/TestEmbeddings/TestDataEmbeddings0.npy")
+labels_test = np.load("../WeiboComments/data/PreData/TestEmbeddings/TestDataLabels0.npy")
 
 ans = []
 for i, (features, labels) in enumerate(zip(data_test, labels_test)):

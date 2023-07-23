@@ -7,9 +7,9 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 input_size = 768
 hidden_size = 128
 num_layers = 2
-num_epochs = 100
-learning_rate = 0.1
-DropOut = 0.1
+num_epochs = 5120
+learning_rate = 0.01
+DropOut = 0.6
 num_classes = 2
 
 model = LSTM(input_size,
@@ -42,6 +42,7 @@ for epoch in range(num_epochs):
             loss.backward()
             optimizer.step()
             optimizer.zero_grad()
+        print('%04d' % (epoch + 1), 'loss =', '{:.6f}'.format(loss))
 
     print('Epoch:', '%04d' % (epoch + 1), 'loss =', '{:.6f}'.format(loss))
 
