@@ -109,7 +109,23 @@ print('F1 =', '{:.6f}'.format(F1_Macro))
 print(67.33)
 
 # Weighted
+negative_Weighted = 0.18
+neutral_Weighted = 0.18
+positive_Weighted = 0.64
 
+Precision_Weighted = negative_Weighted * Precision_negative + neutral_Weighted * Precision_neutral + positive_Weighted * Precision_positive
+Recall_Weighted = negative_Weighted * Recall_negative + neutral_Weighted * Recall_neutral + positive_Weighted * Recall_positive
+F1_Weighted = 2 * (Precision_Weighted * Recall_Weighted) / (Precision_Weighted + Recall_Weighted)
+
+print("---------Weighted----------")
+print('Accuracy =', '{:.6f}'.format(Accuracy))
+print(65.92)
+print('Precision =', '{:.6f}'.format(Precision_Weighted))
+print(66.53)
+print('Recall =', '{:.6f}'.format(Recall_Weighted))
+print(64.29)
+print('F1 =', '{:.6f}'.format(F1_Weighted))
+print(67.33)
 
 # Micro
 Precision_Micro = (TP_positive + TP_neutral + TP_negative) / (TP_positive + TP_neutral + TP_negative + FP_positive + FP_neutral + FP_negative)
